@@ -1,0 +1,59 @@
+[
+  {
+    "objectID": "problem4.html",
+    "href": "problem4.html",
+    "title": "Problem 4",
+    "section": "",
+    "text": "Problem 4\n 1    def check_number(n):\n 2        if n &gt; 0:\n 3            return \"positive\"\n 4        elif n &lt; 0:\n 5            return \"negative\"\n 6        else:\n 7            return \"zero\"\n\n 8    i = -1\n 9    while i &lt;= 1:\n10        print(f\"{n} is {check_number(n)}\")\n11        i += 1\nDetermine the order of execution of the code above on input 11. Use the line numbers provided. Separate the numbers with commas.\n\n Submit",
+    "crumbs": [
+      "Problem 4"
+    ]
+  },
+  {
+    "objectID": "problem3.html",
+    "href": "problem3.html",
+    "title": "Problem 3",
+    "section": "",
+    "text": "Problem 3\n 1    def check_if_even(n):\n 2        if n % 2 == 0:\n 3            return True\n 4        else:\n 5            return False\n\n 6    def prompt():\n 7        return int(input(\"Enter a number: \"))\n\n 8    val = prompt()\n 9    if check_if_even(val):\n10      print(\"The number was even\")\n11    else:\n12      print(\"The number was odd\")\nDetermine the order of execution of the code above on input 11. Use the line numbers provided. Separate the numbers with commas.\n\n Submit",
+    "crumbs": [
+      "Problem 3"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Order of Execution Practice",
+    "section": "",
+    "text": "Use the problems listed below to practice order of execution.\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "problem1.html",
+    "href": "problem1.html",
+    "title": "Problem 1",
+    "section": "",
+    "text": "Problem 1\n1  def sum_of_squares(n):\n2     if n &lt; 0:\n3         return 0\n4     return n * (n + 1) * (2 * n + 1) // 6\n\n\n5  n = int(input(\"Enter a number: \"))\n6  print(f\"Sum of squares up to {n}: {sum_of_squares(n)}\")\n7  print(\"All Done!\")\nDetermine the order of execution of the code above on input 5. Use the line numbers provided.\n\n 1,2,3,4,5,6,7\n 5,6,1,2,3,4,7\n 5,6,1,2,4,6,7\n 5,6,1,2,4,7\n\nSubmit",
+    "crumbs": [
+      "Problem 1"
+    ]
+  },
+  {
+    "objectID": "problem2.html",
+    "href": "problem2.html",
+    "title": "Problem 2",
+    "section": "",
+    "text": "Problem 2\n 1    def check_if_even(n):\n 2        if n % 2 == 0:\n 3            return True\n 4        else:\n 5            return False\n\n 6    def prompt():\n 7        return int(input(\"Enter a number: \"))\n\n 8    val = prompt()\n 9    if check_if_even(val):\n10      print(\"The number was even\")\n11    else:\n12      print(\"The number was odd\")\nDetermine the order of execution of the code above on input 10. Use the line numbers provided. Separate the numbers with commas.\n\n Submit",
+    "crumbs": [
+      "Problem 2"
+    ]
+  }
+]

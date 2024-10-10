@@ -1,0 +1,52 @@
+# Problem 3
+
+
+```python
+ 1    def check_if_even(n):
+ 2        if n % 2 == 0:
+ 3            return True
+ 4        else:
+ 5            return False
+
+ 6    def prompt():
+ 7        return int(input("Enter a number: "))
+
+ 8    val = prompt()
+ 9    if check_if_even(val):
+10      print("The number was even")
+11    else:
+12      print("The number was odd")
+```
+
+Determine the order of execution of the code above on input `11`. 
+Use the line numbers provided. Separate the numbers with commas.
+
+<form id="short-answer-form" class="form-container">
+  <input type="text" id="user-answer" class="custom-input" placeholder="e.g., 1, 2, 3"><br><br>
+  <button type="button" class="custom-button" onclick="checkShortAnswer()">Submit</button>
+</form>
+
+<p id="short-answer-result"></p>
+
+<script>
+  function checkShortAnswer() {
+    var userAnswer = document.getElementById("user-answer").value;
+    var result = document.getElementById("short-answer-result");
+
+    // The correct answer without spaces
+    var correctAnswer = "8,6,7,9,1,2,4,5,11,12";
+
+    // Remove spaces from the user's answer and correct answer
+    var formattedUserAnswer = userAnswer.replace(/\s+/g, '');
+    
+    // Check if the user's answer matches the correct answer
+    if (formattedUserAnswer === correctAnswer) {
+      result.textContent = "Correct! Well done.";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "red";
+    }
+  }
+</script>
+

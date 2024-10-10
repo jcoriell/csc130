@@ -1,0 +1,50 @@
+# Problem 4
+
+
+```python
+ 1    def check_number(n):
+ 2        if n > 0:
+ 3            return "positive"
+ 4        elif n < 0:
+ 5            return "negative"
+ 6        else:
+ 7            return "zero"
+
+ 8    i = -1
+ 9    while i <= 1:
+10        print(f"{n} is {check_number(n)}")
+11        i += 1
+```
+
+Determine the order of execution of the code above on input `11`. 
+Use the line numbers provided. Separate the numbers with commas.
+
+<form id="short-answer-form" class="form-container">
+  <input type="text" id="user-answer" class="custom-input" placeholder="e.g., 1, 2, 3"><br><br>
+  <button type="button" class="custom-button" onclick="checkShortAnswer()">Submit</button>
+</form>
+
+<p id="short-answer-result"></p>
+
+<script>
+  function checkShortAnswer() {
+    var userAnswer = document.getElementById("user-answer").value;
+    var result = document.getElementById("short-answer-result");
+
+    // The correct answer without spaces
+    var correctAnswer = "8,9,10,1,2,4,5,11,9,10,1,2,4,6,7,11,9,10,1,2,3,11,9";
+
+    // Remove spaces from the user's answer and correct answer
+    var formattedUserAnswer = userAnswer.replace(/\s+/g, '');
+    
+    // Check if the user's answer matches the correct answer
+    if (formattedUserAnswer === correctAnswer) {
+      result.textContent = "Correct! Well done.";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "red";
+    }
+  }
+</script>
+

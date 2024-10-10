@@ -1,0 +1,56 @@
+# Problem 1
+
+
+```python
+1  def sum_of_squares(n):
+2     if n < 0:
+3         return 0
+4     return n * (n + 1) * (2 * n + 1) // 6
+
+
+5  n = int(input("Enter a number: "))
+6  print(f"Sum of squares up to {n}: {sum_of_squares(n)}")
+7  print("All Done!")
+```
+
+Determine the order of execution of the code above on input `5`. Use the line numbers provided.
+
+<form id="quiz-form">
+  <input type="radio" id="option1" name="answer" value="1">
+  <label for="option1">1,2,3,4,5,6,7</label><br>
+  
+  <input type="radio" id="option2" name="answer" value="2">
+  <label for="option2">5,6,1,2,3,4,7</label><br>
+  
+  <input type="radio" id="option3" name="answer" value="3">
+  <label for="option3">5,6,1,2,4,6,7</label><br>
+  
+  <input type="radio" id="option4" name="answer" value="4">
+  <label for="option4">5,6,1,2,4,7</label><br><br>
+  
+  <button type="button" class="custom-button" onclick="checkAnswer()">Submit</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function checkAnswer() {
+    var selected = document.querySelector('input[name="answer"]:checked');
+    var result = document.getElementById("result");
+
+    if (!selected) {
+      result.textContent = "Please select an option!";
+      return;
+    }
+
+    var answer = selected.value;
+    if (answer == "4") {
+      result.textContent = "Correct!";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Incorrect. Try again!";
+      result.style.color = "red";
+    }
+  }
+</script>
+

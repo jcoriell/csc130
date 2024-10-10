@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: docs
+
+
+website:
+  title: "Order of Execution Practice"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: Home
+        href: index.qmd
+      - text: Problem 1
+        href: problem1.qmd
+      - text: Problem 2
+        href: problem2.qmd
+      - text: Problem 3
+        href: problem3.qmd
+      - text: Problem 4
+        href: problem4.qmd
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,14 @@
+---
+title: "Order of Execution Practice"
+---
+
+Use the problems listed below to practice order of execution.
+
+- [Problem 1](problem1.qmd)
+
+- [Problem 2](problem2.qmd)
+
+- [Problem 3](problem3.qmd)
+
+- [Problem 4](problem4.qmd)
+
