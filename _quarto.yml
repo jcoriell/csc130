@@ -4,21 +4,28 @@ project:
 
 
 website:
-  title: "Order of Execution Practice"
+  title: "CSC 130"
   sidebar:
-    style: "docked"
+    collapsible: true
     search: true
-    contents:
+    contents:      
       - text: Home
-        href: index.qmd
-      - text: Problem 1
-        href: problem1.qmd
-      - text: Problem 2
-        href: problem2.qmd
-      - text: Problem 3
-        href: problem3.qmd
-      - text: Problem 4
-        href: problem4.qmd
+        href: "practice/index.qmd"
+      - section: "Practice"
+        contents:
+          - text: Problem 1
+            href: "practice/problem1.qmd"
+          - text: Problem 2
+            href: "practice/problem2.qmd"
+          - text: Problem 3
+            href: "practice/problem3.qmd"
+          - text: Problem 4
+            href: "practice/problem4.qmd"
+      - section: "Pi Activities"
+        contents:
+          - text: Alarm System
+            href: "pi activities/05/instructions.qmd"
+
 
 
 format:
@@ -26,6 +33,7 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+
 
 
 

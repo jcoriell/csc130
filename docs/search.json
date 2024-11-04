@@ -1,35 +1,30 @@
 [
   {
-    "objectID": "problem4.html",
-    "href": "problem4.html",
+    "objectID": "practice/problem4.html",
+    "href": "practice/problem4.html",
     "title": "Problem 4",
     "section": "",
     "text": "Problem 4\n 1    def check_number(n):\n 2        if n &gt; 0:\n 3            return \"positive\"\n 4        elif n &lt; 0:\n 5            return \"negative\"\n 6        else:\n 7            return \"zero\"\n\n 8    i = -1\n 9    while i &lt;= 1:\n10        print(f\"{n} is {check_number(n)}\")\n11        i += 1\nDetermine the order of execution of the code above on input 11. Use the line numbers provided. Separate the numbers with commas.\n\n Submit",
     "crumbs": [
+      "Practice",
       "Problem 4"
     ]
   },
   {
-    "objectID": "problem3.html",
-    "href": "problem3.html",
+    "objectID": "practice/problem3.html",
+    "href": "practice/problem3.html",
     "title": "Problem 3",
     "section": "",
     "text": "Problem 3\n 1    def check_if_even(n):\n 2        if n % 2 == 0:\n 3            return True\n 4        else:\n 5            return False\n\n 6    def prompt():\n 7        return int(input(\"Enter a number: \"))\n\n 8    val = prompt()\n 9    if check_if_even(val):\n10      print(\"The number was even\")\n11    else:\n12      print(\"The number was odd\")\nDetermine the order of execution of the code above on input 11. Use the line numbers provided. Separate the numbers with commas.\n\n Submit",
     "crumbs": [
+      "Practice",
       "Problem 3"
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Order of Execution Practice",
+    "objectID": "practice/index.html",
+    "href": "practice/index.html",
+    "title": "CSC 130 Practice",
     "section": "",
     "text": "Use the problems listed below to practice order of execution.\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4",
     "crumbs": [
@@ -37,22 +32,133 @@
     ]
   },
   {
-    "objectID": "problem1.html",
-    "href": "problem1.html",
+    "objectID": "practice/index.html#order-of-execution",
+    "href": "practice/index.html#order-of-execution",
+    "title": "CSC 130 Practice",
+    "section": "",
+    "text": "Use the problems listed below to practice order of execution.\n\nProblem 1\nProblem 2\nProblem 3\nProblem 4",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html",
+    "href": "pi activities/05/instructions.html",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "",
+    "text": "In this activity, you will implement a very basic alarm system. The circuit will make use of a passive infrared (PIR) motion sensor to activate an LED whenever it recognizes some kind of motion.",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#overview",
+    "href": "pi activities/05/instructions.html#overview",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "",
+    "text": "In this activity, you will implement a very basic alarm system. The circuit will make use of a passive infrared (PIR) motion sensor to activate an LED whenever it recognizes some kind of motion.",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#components-needed",
+    "href": "pi activities/05/instructions.html#components-needed",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "Components Needed",
+    "text": "Components Needed\n\nRaspberry Pi B v4 (or similar) with power adapter\nDisplay, Keyboard, and Mouse\nBreadboard\nGPIO-to-breadboard interface board with ribbon cable\nPIR motion sensor\n1 LED\nOne 220 Ohm resistor\n1 pushbutton switch",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#understanding-the-components",
+    "href": "pi activities/05/instructions.html#understanding-the-components",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "Understanding the Components",
+    "text": "Understanding the Components\nThe major new component in this activity is the passive infrared (PIR) motion sensor. This sensor detects any changes in infrared radiation from object around it. This detection is used to ascertain if something has moved within its field of view.\n\n\n\nPIR Sensor\n\n\nThe sensor typically has three pins:\n\nGround\n5V\nAn Output Pin\n\nThe PIR sensor has two potentiometers (orange in color). These can be thought of as volume nobs. These potentiometers can be used to adjust how sensitive the sensor is and to adjust the length of the time delay between sensor activation and output. More details on the sensor are beyond the scope of this lesson.",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#the-circuit",
+    "href": "pi activities/05/instructions.html#the-circuit",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "The Circuit",
+    "text": "The Circuit\nThis is a fairly simple circuit to set up. The most complicated thing about it will be making sure you do not mix the pins up.\n\n\n\nCircuit diagram for the alarm system\n\n\nThe circuit above can be laid out in the format below.\n\n\n\nPictoral representation of the circuit for the alarm system",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#programming",
+    "href": "pi activities/05/instructions.html#programming",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "Programming",
+    "text": "Programming\nOnce you have set up the circuit as shown above, let’s go ahead and create the program shown below. Many parts of this program should be familiar to you from previous pi activities.\nimport RPi.GPIO as GPIO\nfrom time import sleep\n\n# GPIO pins\nSENSOR = 26\n\n# Pin setup\nGPIO.setmode(GPIO.BCM) # set the RPi to the Broadcom Pin layout\nGPIO.setup(SENSOR, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # setup the sensor\n\ntry:\n    while True:\n        if GPIO.input(SENSOR) == GPIO.HIGH:\n            print(\"Motion Detected\")\n        else:\n            print(\"No Motion\")\n        sleep(0.5)\nexcept KeyboardInterrupt:\n    # if the user types ctrl + c, run GPIO.cleanup()\n    GPIO.cleanup()  # clear out the setup I/O\n\nprint(\"Done.\")\nThe code above should print out an appropriate messae based on whether there is some movement in front of the sensor or not. Try it out to make sure it works and that everything is connected correctly.",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#adding-an-output-pin",
+    "href": "pi activities/05/instructions.html#adding-an-output-pin",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "Adding an output pin",
+    "text": "Adding an output pin\nNow that we have the sensor working, we could adjust the simple code above to activate the LED whenever motion is detected. The code for this is shown below with adjustments highlighted via comments.\nimport RPi.GPIO as GPIO\nfrom time import sleep\n\n# GPIO pins\nSENSOR = 26\nLED = 27                        # NEW!\n\n# Pin setup\nGPIO.setmode(GPIO.BCM) \nGPIO.setup(SENSOR, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)\nGPIO.setup(LED, GPIO.OUT)       # NEW!\n\n\ntry:\n    while True:\n        if GPIO.input(SENSOR) == GPIO.HIGH:\n            print(\"Motion Detected\")\n            GPIO.output(LED, GPIO.HIGH)     # NEW!\n        else:\n            print(\"No Motion\")\n            GPIO.output(LED, GPIO.LOW)      # NEW!\n        sleep(0.5)\nexcept KeyboardInterrupt:\n    GPIO.cleanup() \n\nprint(\"Done.\")",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#homework",
+    "href": "pi activities/05/instructions.html#homework",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "Homework",
+    "text": "Homework\nExtend the program in this activity so that it utilizes a switch to deactivate the alarm system. In its current form, the program will set off the alarm (the print statement and lighting the LED) if there is motion detected. Unfortunately, this means that for both intruders and proper users, the alarm will go off. Change the circuit to incorporate the use of a simple push button switch with the following logic.\nIf motion is detected, then the user has 3 seconds to push the button switch. \nIf the switch is activated within those 3 seconds, then the alarm will not be triggered.\nIf the switch is not activated within those 3 seconds, then the alarm will be triggered.\nJust to clarify, the assignment will require two portions:\n\nThe adjustment of the circuit to incorporate a switch.\nThe adjustment of the code to implement the logic explained above.\n\nBe sure to clean up your code as best as you can. Feel free to use custom functions to make it more managable and legible.",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "pi activities/05/instructions.html#submission",
+    "href": "pi activities/05/instructions.html#submission",
+    "title": "Raspberry Pi Activity: Alarm System",
+    "section": "Submission",
+    "text": "Submission\nSubmit your code in the usual place your professor has you submit your code.",
+    "crumbs": [
+      "Pi Activities",
+      "Alarm System"
+    ]
+  },
+  {
+    "objectID": "practice/problem1.html",
+    "href": "practice/problem1.html",
     "title": "Problem 1",
     "section": "",
     "text": "Problem 1\n1  def sum_of_squares(n):\n2     if n &lt; 0:\n3         return 0\n4     return n * (n + 1) * (2 * n + 1) // 6\n\n\n5  n = int(input(\"Enter a number: \"))\n6  print(f\"Sum of squares up to {n}: {sum_of_squares(n)}\")\n7  print(\"All Done!\")\nDetermine the order of execution of the code above on input 5. Use the line numbers provided.\n\n 1,2,3,4,5,6,7\n 5,6,1,2,3,4,7\n 5,6,1,2,4,6,7\n 5,6,1,2,4,7\n\nSubmit",
     "crumbs": [
+      "Practice",
       "Problem 1"
     ]
   },
   {
-    "objectID": "problem2.html",
-    "href": "problem2.html",
+    "objectID": "practice/problem2.html",
+    "href": "practice/problem2.html",
     "title": "Problem 2",
     "section": "",
     "text": "Problem 2\n 1    def check_if_even(n):\n 2        if n % 2 == 0:\n 3            return True\n 4        else:\n 5            return False\n\n 6    def prompt():\n 7        return int(input(\"Enter a number: \"))\n\n 8    val = prompt()\n 9    if check_if_even(val):\n10      print(\"The number was even\")\n11    else:\n12      print(\"The number was odd\")\nDetermine the order of execution of the code above on input 10. Use the line numbers provided. Separate the numbers with commas.\n\n Submit",
     "crumbs": [
+      "Practice",
       "Problem 2"
     ]
   }

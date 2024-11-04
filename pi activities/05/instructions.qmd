@@ -1,0 +1,130 @@
+---
+title: "Raspberry Pi Activity: Alarm System"
+---
+
+## Overview
+
+In this activity, you will implement a very basic alarm system. The circuit will make use of a passive infrared (PIR) motion sensor to activate an LED whenever it recognizes some kind of motion. 
+
+## Components Needed
+
+- Raspberry Pi B v4 (or similar) with power adapter
+- Display, Keyboard, and Mouse
+- Breadboard
+- GPIO-to-breadboard interface board with ribbon cable
+- PIR motion sensor
+- 1 LED
+- One 220 Ohm resistor
+- 1 pushbutton switch
+
+## Understanding the Components
+
+The major new component in this activity is the passive infrared (PIR) motion sensor. This sensor detects any changes in infrared radiation from object around it. This detection is used to ascertain if something has moved within its field of view.
+
+![PIR Sensor](images/pir-sensor.png)
+
+The sensor typically has three pins: 
+
+- Ground
+- 5V
+- An Output Pin
+
+The PIR sensor has two potentiometers (orange in color). These can be thought of as volume nobs. These potentiometers can be used to adjust how sensitive the sensor is and to adjust the length of the time delay between sensor activation and output. More details on the sensor are beyond the scope of this lesson.
+
+## The Circuit
+
+This is a fairly simple circuit to set up. The most complicated thing about it will be making sure you do not mix the pins up.
+
+![Circuit diagram for the alarm system](images/circuit-diagram.png)
+
+The circuit above can be laid out in the format below.
+
+![Pictoral representation of the circuit for the alarm system](images/breadboard.png)
+
+## Programming
+
+Once you have set up the circuit as shown above, let's go ahead and create the program shown below. Many parts of this program should be familiar to you from previous pi activities.
+
+```Python
+import RPi.GPIO as GPIO
+from time import sleep
+
+# GPIO pins
+SENSOR = 26
+
+# Pin setup
+GPIO.setmode(GPIO.BCM) # set the RPi to the Broadcom Pin layout
+GPIO.setup(SENSOR, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # setup the sensor
+
+try:
+    while True:
+        if GPIO.input(SENSOR) == GPIO.HIGH:
+            print("Motion Detected")
+        else:
+            print("No Motion")
+        sleep(0.5)
+except KeyboardInterrupt:
+    # if the user types ctrl + c, run GPIO.cleanup()
+    GPIO.cleanup()  # clear out the setup I/O
+
+print("Done.")
+```
+
+The code above should print out an appropriate messae based on whether there is some movement in front of the sensor or not. Try it out to make sure it works and that everything is connected correctly.
+
+## Adding an output pin
+
+Now that we have the sensor working, we could adjust the simple code above to activate the LED whenever motion is detected. The code for this is shown below with adjustments highlighted via comments.
+
+```Python
+import RPi.GPIO as GPIO
+from time import sleep
+
+# GPIO pins
+SENSOR = 26
+LED = 27                        # NEW!
+
+# Pin setup
+GPIO.setmode(GPIO.BCM) 
+GPIO.setup(SENSOR, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(LED, GPIO.OUT)       # NEW!
+
+
+try:
+    while True:
+        if GPIO.input(SENSOR) == GPIO.HIGH:
+            print("Motion Detected")
+            GPIO.output(LED, GPIO.HIGH)     # NEW!
+        else:
+            print("No Motion")
+            GPIO.output(LED, GPIO.LOW)      # NEW!
+        sleep(0.5)
+except KeyboardInterrupt:
+    GPIO.cleanup() 
+
+print("Done.")
+```
+
+
+## Homework
+
+Extend the program in this activity so that it utilizes a switch to deactivate the alarm system. In its current form, the program will set off the alarm (the print statement and lighting the LED) if there is motion detected. Unfortunately, this means that for both intruders and proper users, the alarm will go off. Change the circuit to incorporate the use of a simple push button switch with the following logic.
+
+```
+If motion is detected, then the user has 3 seconds to push the button switch. 
+If the switch is activated within those 3 seconds, then the alarm will not be triggered.
+If the switch is not activated within those 3 seconds, then the alarm will be triggered.
+```
+
+Just to clarify, the assignment will require two portions:
+
+1. The adjustment of the circuit to incorporate a switch.
+2. The adjustment of the code to implement the logic explained above.
+
+Be sure to clean up your code as best as you can. Feel free to use custom functions to make it more managable and legible.
+
+## Submission
+
+Submit your code in the usual place your professor has you submit your code.
+
+

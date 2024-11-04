@@ -1,7 +1,9 @@
 ---
-title: "Order of Execution Practice"
+title: "CSC 130 Practice"
 ---
 
+
+## Order of Execution
 Use the problems listed below to practice order of execution.
 
 - [Problem 1](problem1.qmd)
